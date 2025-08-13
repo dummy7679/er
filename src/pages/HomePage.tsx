@@ -150,7 +150,7 @@ export const HomePage: React.FC = () => {
       const { data: refreshData } = await supabase
         .from('clinic_settings')
         .select('setting_value')
-        .eq('setting_key', 'refresh_interval')
+        .eq('setting_key', 'auto_refresh_interval')
         .single();
       if (refreshData) setRefreshInterval(refreshData.setting_value);
     } catch (error) {
